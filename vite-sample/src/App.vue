@@ -1,24 +1,47 @@
+<!-- 寫 JS 區塊 -->
+<!-- 把元件拆成小區塊,再滙入 -->
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import {ref} from'vue';
+const num = ref(2);
+function clickMe(){
+    num.value++
+}
+// 這裡不需return
+// return{
+//     num ,clickMe
+// }
+
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
+<!-- html 片段 -->
 <template>
-  <header>
+   <!-- 應用程式生成的位置 -->
+   <div id="app">
+    {{ num }}
+    <button type="button" v-on:click="clickMe">請點我+1</button>
+   </div>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      
+      <HelloWorld msg="You did it!" />  
     </div>
   </header>
 
   <main>
     <TheWelcome />
-  </main>
+  </main> -->
+
+
 </template>
 
+<!-- css 結構 -->
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
 }
 
@@ -43,5 +66,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>
